@@ -1,0 +1,43 @@
+<div class="container">
+    <img src="./assets/images/logo.png" alt="image">
+    <h1 mat-dialog-title>Data Form</h1>
+</div>
+
+<div class="example-container">
+    <mat-form-field>
+        <input matInput placeholder="Input GST No." [formControl]="gstNo" required>
+        <mat-error>{{getGstErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Input the Seller's Name" [formControl]="seller" required>
+        <mat-error>{{getSellerErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Input your description" [formControl]="description" required>
+        <mat-error>{{getDescriptionErrMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Input your Filler's Name" [formControl]="name" required>
+        <mat-error>{{getNameErrMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Input your Bill Date" [formControl]="billDate">
+        <mat-error>{{getBillDateErrMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Amount" type="number" class="example-right-align" [formControl]="amount" required>
+        <span matPrefix>&#162;&nbsp;</span>
+        <mat-error>{{getAmountErrMessage()}}</mat-error>
+    </mat-form-field>
+    <div class="row">
+        <mat-dialog-actions>
+            <button color="primary" type="submit" mat-raised-button (click)="onFormSubmitButton()">Submit</button>
+            <button color="warn" type="reset" mat-raised-button (click)="onFormCancelButton()">Cancel</button>
+        </mat-dialog-actions>
+    </div>
+</div>

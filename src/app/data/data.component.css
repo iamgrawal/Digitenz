@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+.center{
+    width:30%;
+    padding: 20px;
+}
+.header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+.mat-header-cell{
+font-size:20px;
+text-align: center;
+color:black;
+}
+.mat-table {
+    overflow: auto;
+    column-width: auto;
+    align-content: center;
+}
+.loading-shade {
+    position: absolute;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

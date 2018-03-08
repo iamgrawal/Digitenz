@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="header">
+        <img src="./assets/images/user.png" alt="image">
+        <h1>LOGIN</h1>
+    </div>
+    <div class="example-container">
+        <mat-form-field>
+            <mat-icon matSuffix>email</mat-icon>
+            <input matInput placeholder="Email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Enter your password" [formControl]="password" required [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error>{{getpassErrMessage()}}</mat-error>
+        </mat-form-field>
+        <button color="primary" mat-raised-button (click)="checkCredentials()">Login</button>
+    </div>
+</div>

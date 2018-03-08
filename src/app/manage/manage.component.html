@@ -1,0 +1,37 @@
+<div class="container mat-elevation-z8">
+    <div class="loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-table #table [dataSource]="dataSource" class="table">
+
+        <!--Id Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column-->
+        <ng-container matColumnDef="username">
+            <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.unm }} </mat-cell>
+        </ng-container>
+
+        <!-- Email Id Column -->
+        <ng-container matColumnDef="designation">
+            <mat-header-cell *matHeaderCellDef>Designation</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.dn }} </mat-cell>
+        </ng-container>
+
+        <!--Action Column -->
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button color="warn" mat-button (click)="removeUser(row._id)">Delete</button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row ; columns: displayedColumns;"></mat-row>
+
+    </mat-table>
+</div>

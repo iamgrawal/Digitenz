@@ -1,0 +1,31 @@
+<ng-container>
+    <mat-toolbar class="example-header" color="primary">
+        <mat-toolbar-row>
+            <img src="./assets/images/logo.png" alt="image"> <span>  Digitize</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav *ngIf="loggedIn" #sidenav mode="side" opened="true" class="example-sidenav">
+            <mat-list>
+                <a style="text-decoration: none;" mat-list-item routerLink="/data">
+                    <mat-icon matListIcon>data_usage</mat-icon>
+                    <h2 matLine> Receipts </h2>
+                </a>
+                <a style="text-decoration: none;" mat-list-item routerLink="/manage">
+                    <mat-icon matListIcon>extension</mat-icon>
+                    <h2 matLine> Manage Users</h2>
+                </a>
+                <a style="text-decoration: none;" mat-list-item routerLink="/login">
+                    <mat-icon matListIcon>exit_to_app</mat-icon>
+                    <h2 matLine> Logout</h2>
+                </a>
+            </mat-list>
+        </mat-sidenav>
+        <router-outlet>
+        </router-outlet>
+
+    </mat-sidenav-container>
+    <mat-toolbar color="warn" class="example-footer">
+        <span class="example-spacer"></span> All the Rights are Reserved by Digitenz</mat-toolbar>
+</ng-container>
